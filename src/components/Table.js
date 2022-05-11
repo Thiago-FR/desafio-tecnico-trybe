@@ -1,20 +1,6 @@
 import React from "react";
 
-function Table() {
-  const mockData = [{
-    id: 1,
-    task: 'front-end',
-    date: new Date().getDate(),
-    status: 'Pendente',
-    responsible: 'Thiago'
-  },
-  {
-    id: 2,
-    task: 'front-end',
-    date: new Date().getDate(),
-    status: 'Pendente',
-    responsible: 'Thiago'
-  }]
+function Table({ data }) {
   return (
     <table className="table">
       <thead>
@@ -28,8 +14,8 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-          { mockData.length !== 0 && (
-              mockData.map((row) => (
+          { data && data.length !== 0 && (
+              data.map((row) => (
                 <tr key={ `${row.id}-${row.task}` }>
                   <th scope="row">{ row.id }</th>
                   <td>{ row.task }</td>
@@ -49,20 +35,3 @@ function Table() {
 }
 
 export default Table;
-
-// { data && data.length !== 0 && (
-//   data.map((row) => (
-//     <tr key={ `${row.id}-${row.task}` }>
-//       <th scope="row">{ row.id }</th>
-//       <td>{ row.task }</td>
-//       <td>{ row.date }</td>
-//       <td>{ row.status }</td>
-//       <td>{ row.responsible }</td>
-//       <td>
-//         <button type="button">Editar</button>
-//         <button type="button">X</button>
-//       </td>
-//     </tr>
-//   ))
-// )}
-
