@@ -1,15 +1,14 @@
-import React, { useContext } from "react";
-import ToDoListContext from "./context/ToDoListContext";
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from './pages/Home'
 
 function App() {
-  const { name, setName } = useContext(ToDoListContext);
   return (
-    <div>
-      <header>
-        <p>{ name }</p>
-        <input className="btn btn-primary" onChange={ ({target}) => setName(target.value)}/>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={ Home }/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
