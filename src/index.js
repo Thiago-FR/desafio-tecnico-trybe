@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import ToDoListProvider from './context/ToDoListProvider';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ToDoListProvider>
+      <App />
+    </ToDoListProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
