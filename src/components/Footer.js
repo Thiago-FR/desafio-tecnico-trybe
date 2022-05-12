@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer({ name }) {
   return (
-    <footer className="navbar navbar-expand-lg navbar-light bg-light">
+    <footer className="navbar navbar-expand-lg navbar-light bg-light mt-4">
       <p className="centered col-lg-3">&copy;{ name } - Todos os direitos reservados</p>
     </footer>
   );

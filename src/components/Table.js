@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import ToDoListContext from "../context/ToDoListContext";
 
-function Table({ data }) {
+function Table() {
+  const { data } = useContext(ToDoListContext);
+
   return (
-    <table className="table">
+    <table className="table table-striped mt-4 align-middle">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -14,7 +17,7 @@ function Table({ data }) {
         </tr>
       </thead>
       <tbody>
-          { data && data.length !== 0 && (
+          { data.length !== 0 && (
               data.map((row) => (
                 <tr key={ `${row.id}-${row.task}` }>
                   <th scope="row">{ row.id }</th>
@@ -23,8 +26,8 @@ function Table({ data }) {
                   <td>{ row.status }</td>
                   <td>{ row.responsible }</td>
                   <td>
-                    <button type="button">Editar</button>
-                    <button type="button">X</button>
+                    <button className="btn btn-outline-primary" type="button">Editar</button>
+                    <button className="btn btn-outline-danger"  type="button">X</button>
                   </td>
                 </tr>
               ))

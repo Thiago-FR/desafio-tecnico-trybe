@@ -8,6 +8,9 @@ Tabela da lista de Tarefas
 - Remover Tarefa
 - Atualizar Tarefa
 - Status da Tarefa
+  - Pendente
+  - em Andamento
+  - Pronto
 - Deve Ser ordenavel
   - Ordem Alfabetica
   - Data de criação

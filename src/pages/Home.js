@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import ToDoListContext from "../context/ToDoListContext";
+import React from "react";
 import Table from '../components/Table'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import InsertBar from "../components/InsertBar";
 
 function Home() {
-  const { name, setName } = useContext(ToDoListContext);
   return (
     <div className="container">
-      <Header h1="TAREFA"/>
+      <Header h1="TAREFAS"/>
       <main>
-        <Table />
+        <InsertBar />
+        <div className="d-flex justify-content-center"><Table /></div>
       </main>
       <Footer name="Ebytr 2022"/>
     </div>

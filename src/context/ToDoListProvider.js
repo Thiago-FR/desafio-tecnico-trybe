@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ToDoListContext from './ToDoListContext';
+import { fetchApiMock } from "../services/fetchApi";
 
 function ToDoListProvider({ children }) {
-  const [name, setName] = useState('');
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchApiMock(setData);
+  }, []);
 
   const context = {
-    name,
-    setName
+    data,
+    setData
   }
 
   return(
-    <ToDoListContext.Provider value= { context }>
+    <ToDoListContext.Provider value={ context }>
       { children }
     </ToDoListContext.Provider>
   )
