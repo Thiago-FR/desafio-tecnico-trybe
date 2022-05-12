@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import ToDoListContext from "../context/ToDoListContext";
+import imgRemove from '../img/lixeira.png'
+import editarRemove from '../img/editar.png'
 
 function Table() {
   const { data } = useContext(ToDoListContext);
@@ -26,8 +28,19 @@ function Table() {
                   <td>{ row.status }</td>
                   <td>{ row.responsible }</td>
                   <td>
-                    <button className="btn btn-outline-primary" type="button">Editar</button>
-                    <button className="btn btn-outline-danger"  type="button">X</button>
+                    <button
+                      className="btn btn-outline-primary"
+                      type="button"
+                    >
+                      <img style={{ width: "20px", height: "30px" }} src={ editarRemove } alt="Editar item"/>
+                    </button>
+                    <button
+                      className="btn btn-outline-danger"
+                      style={{ marginLeft: "10px" }}
+                      type="button"
+                    >
+                      <img style={{ width: "30px", height: "30px" }} src={ imgRemove } alt="Remover item"/>
+                    </button>
                   </td>
                 </tr>
               ))
