@@ -24,6 +24,7 @@ function InsertBar() {
           type="text" placeholder="Tarefa"
           value={ task }
           onChange={ ({ target }) => setTask(target.value)}
+          data-testid="input-task"
         />
         <input
           className="form-control"
@@ -31,6 +32,7 @@ function InsertBar() {
           value={ responsible }
           placeholder="Responsável"
           onChange={ ({ target }) => setResponsible(target.value)}
+          data-testid="input-responsible"
         />
       </div>
       <div className="mt-2 col-lg-12 rigth">
