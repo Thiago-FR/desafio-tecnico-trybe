@@ -2,14 +2,14 @@ const mockData = [
   {
     id: 1,
     task: 'front-end',
-    date: new Date().getDate(),
+    date: "2022-05-10",
     status: 'Pendente',
     responsible: 'Thiago'
   },
   {
     id: 2,
     task: 'back-end',
-    date: new Date().getDate(),
+    date: "2022-05-01",
     status: 'Pendente',
     responsible: 'Thiago'
   }]
