@@ -8,7 +8,7 @@ const mockData = [
   },
   {
     id: 2,
-    task: 'front-end',
+    task: 'back-end',
     date: new Date().getDate(),
     status: 'Pendente',
     responsible: 'Thiago'

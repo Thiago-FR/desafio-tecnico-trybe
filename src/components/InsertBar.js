@@ -3,7 +3,7 @@ import ToDoListContext from '../context/ToDoListContext';
 import { fetchApiMock, fetchApiMockAdd } from "../services/fetchApi";
 
 function InsertBar() {
-  const { setData } = useContext(ToDoListContext);
+  const { setData, isEditItem } = useContext(ToDoListContext);
   const [task, setTask] = useState('');
   const [responsible, setResponsible] = useState('');
 
@@ -38,6 +38,7 @@ function InsertBar() {
           className="btn btn-primary"
           type="button"
           onClick={ () => addList()}
+          disabled={ isEditItem.edited }
         >
           ADICIONAR
         </button>

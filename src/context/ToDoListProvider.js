@@ -4,6 +4,7 @@ import { fetchApiMock } from "../services/fetchApi";
 
 function ToDoListProvider({ children }) {
   const [data, setData] = useState([]);
+  const [isEditItem, setIsEditItem] = useState({ edited: false, indexOf: 0 });
 
   useEffect(() => {
     fetchApiMock(setData);
@@ -11,7 +12,9 @@ function ToDoListProvider({ children }) {
 
   const context = {
     data,
-    setData
+    setData,
+    isEditItem,
+    setIsEditItem
   }
 
   return(
