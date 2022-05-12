@@ -27,6 +27,10 @@ describe('Test render InsertBar Component', () => {
 
     expect(inputTask).toHaveValue(task);
     expect(inputResponsible).toHaveValue(responsible);
+
+    userEvent.click(btnAdd);
+    expect(inputTask).toHaveValue('');
+    expect(inputResponsible).toHaveValue('');
   });
 });
 
