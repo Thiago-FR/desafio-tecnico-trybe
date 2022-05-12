@@ -10,7 +10,7 @@ function Home() {
       <Header h1="TAREFAS"/>
       <main>
         <InsertBar />
-        <div className="d-flex justify-content-center"><Table /></div>
+        <Table />
       </main>
       <Footer name="Ebytr 2022"/>
     </div>

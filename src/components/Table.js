@@ -49,7 +49,7 @@ function Table() {
                   <td>{ row.date }</td>
                   <td>{ row.status }</td>
                   <td>{ row.responsible }</td>
-                  <td className="d-inline-flex" >
+                  <td>
                     <button
                       className="btn btn-outline-primary"
                       type="button"
@@ -71,12 +71,14 @@ function Table() {
                   <th scope="row">{ row.id }</th>
                   <td>
                     <input
+                      className="form-control"
                       value={ task }
                       onChange={ ({ target: { value } }) => setTask(value) }
                     />
                   </td>
                   <td>
                     <input
+                      className="form-control"
                       value={ date }
                       type="date"
                       onChange={ ({ target: { value } }) => setDate(value) }
@@ -84,6 +86,7 @@ function Table() {
                   </td>
                   <td>
                     <select
+                      className="form-select"
                       value={ status }
                       onChange={ ({ target: { value } }) => setStatus(value) }
                     >
@@ -94,11 +97,12 @@ function Table() {
                   </td>
                   <td>
                     <input
+                      className="form-control"
                       value={ responsible }
                       onChange={ ({ target: { value } }) => setResponsible(value) }
                     />
                   </td>
-                  <td className="d-inline-flex" >
+                  <td>
                     <button
                       className="btn btn-outline-primary"
                       type="button"
