@@ -19,4 +19,9 @@ export default class ListServer implements IListService {
     const list = await this.listModel.update(data, id);
     return list;
   }
+
+  public async delete(id: number): Promise<IList> {
+    const list = await this.listModel.delete(id);
+    return list;
+  }
 }

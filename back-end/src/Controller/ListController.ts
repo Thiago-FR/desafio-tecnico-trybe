@@ -16,7 +16,7 @@ export default class ListController implements IListController {
 
     const list = await this.listService.create(createList);
 
-    return res.status(200).json(list);
+    return res.status(201).json(list);
   }
 
   public async update(req: Request, res: Response): Promise<Response> {
@@ -25,6 +25,14 @@ export default class ListController implements IListController {
 
     const list = await this.listService.update(createList, Number(id));
 
-    return res.status(200).json(list);
+    return res.status(201).json(list);
+  }
+
+  public async delete(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+
+    const list = await this.listService.delete(Number(id));
+
+    return res.status(201).json(list);
   }
 }

@@ -22,4 +22,11 @@ export default class PrismaOrm implements IOrm {
     });
     return prisma;
   }
+
+  public async delete(id: number): Promise<IList> {
+    const prisma = await this.prismaOrm.table.delete({
+      where: { id }
+    });
+    return prisma;
+  }
 }
