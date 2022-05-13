@@ -1,6 +1,7 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import IListController from '../Interface/controller';
 import IListService from '../Interface/service';
+import IStatusCode from '../Interface/statusCode';
 
 export default class ListController implements IListController {
   constructor(private listService: IListService) {}
@@ -19,20 +20,26 @@ export default class ListController implements IListController {
     return res.status(201).json(list);
   }
 
-  public async update(req: Request, res: Response): Promise<Response> {
+  public async update(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
     const { id } = req.params;
     const createList = req.body;
 
     const list = await this.listService.update(createList, Number(id));
 
-    return res.status(201).json(list);
+    const { statusCode } = list as IStatusCode;
+    return typeof (statusCode) !== 'undefined'
+      ? next(list)
+      : res.status(201).json(list);
   }
 
-  public async delete(req: Request, res: Response): Promise<Response> {
+  public async delete(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
     const { id } = req.params;
 
     const list = await this.listService.delete(Number(id));
 
-    return res.status(200).json(list);
+    const { statusCode } = list as IStatusCode;
+    return typeof (statusCode) !== 'undefined'
+      ? next(list)
+      : res.status(200).json(list);
   }
 }
