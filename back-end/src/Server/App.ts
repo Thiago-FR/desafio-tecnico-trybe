@@ -1,6 +1,7 @@
 import express, { Express, Request, Response, RequestHandler } from 'express';
 const cors = require('cors');
 import IListController from '../Interface/controller';
+import ErrorMiddleware from '../Middleware/ErrorMiddleware';
 import ListRoutes from '../Routes';
 
 export default class App {
@@ -21,6 +22,8 @@ export default class App {
     });
 
     this.app.use('/api/todo-list', this.listRoutes.router);
+
+    this.app.use(ErrorMiddleware.handleError);
   }
 
   private config() {

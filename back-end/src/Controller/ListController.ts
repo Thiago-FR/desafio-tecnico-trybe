@@ -33,6 +33,6 @@ export default class ListController implements IListController {
 
     const list = await this.listService.delete(Number(id));
 
-    return res.status(201).json(list);
+    return res.status(200).json(list);
   }
 }
