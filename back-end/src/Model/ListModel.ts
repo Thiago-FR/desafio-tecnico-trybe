@@ -1,6 +1,6 @@
 import IList from '../Interface/list';
 import IListModel from '../Interface/model';
-import IOrm from '../Interface/orm';
+import IOrm from '../Interface/prisma';
 
 export default class ListModel implements IListModel {
   constructor(private listModel: IOrm) {}
@@ -12,6 +12,11 @@ export default class ListModel implements IListModel {
 
   public async create(data: IList): Promise<IList> {
     const list = await this.listModel.create(data);
+    return list;
+  }
+
+  public async update(data: IList, id: number): Promise<IList> {
+    const list = await this.listModel.update(data, id);
     return list;
   }
 }

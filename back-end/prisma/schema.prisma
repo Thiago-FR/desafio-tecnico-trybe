@@ -11,9 +11,9 @@ datasource db {
 }
 
 model Table {
-  id            Int       @id @default(autoincrement())
+  id            Int       @id       @default(autoincrement())
   task          String
-  date          DateTime      @default(now())
+  date          DateTime  @default(now())
   status        String
   responsible   String
 }

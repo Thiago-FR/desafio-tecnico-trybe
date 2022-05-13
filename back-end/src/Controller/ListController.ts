@@ -7,6 +7,7 @@ export default class ListController implements IListController {
 
   public async findAll(_req: Request, res: Response): Promise<Response> {
     const list = await this.listService.findAll();
+    
     return res.status(200).json(list);
   }
 
@@ -14,6 +15,16 @@ export default class ListController implements IListController {
     const createList = req.body;
 
     const list = await this.listService.create(createList);
+
+    return res.status(200).json(list);
+  }
+
+  public async update(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const createList = req.body;
+
+    const list = await this.listService.update(createList, Number(id));
+
     return res.status(200).json(list);
   }
 }
