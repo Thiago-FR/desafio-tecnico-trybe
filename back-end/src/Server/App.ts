@@ -45,4 +45,8 @@ export default class App {
       console.log(`Ouvindo na porta ${this.PORT}`);      
     });
   }
+
+  public get appServer(): Express {
+    return this.app;
+  }
 }
