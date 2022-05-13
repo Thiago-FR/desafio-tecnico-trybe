@@ -5,13 +5,23 @@ import IOrm from "../Interface/prisma";
 export default class PrismaOrm implements IOrm {
   private prismaOrm = new PrismaClient();
 
+  public async findOne(id: number): Promise<IList | null> {
+    const prisma = await this.prismaOrm.table.findFirst({ 
+      where: { id }
+    });
+
+    return prisma;
+  }
+
   public async findAll(): Promise<IList[]> {
     const prisma = await this.prismaOrm.table.findMany();
+
     return prisma;
   }
 
   public async create(data: IList): Promise<IList> {
     const prisma = await this.prismaOrm.table.create({ data });
+
     return prisma;
   }
 
@@ -20,6 +30,7 @@ export default class PrismaOrm implements IOrm {
       where: { id },
       data,
     });
+
     return prisma;
   }
 
@@ -27,6 +38,7 @@ export default class PrismaOrm implements IOrm {
     const prisma = await this.prismaOrm.table.delete({
       where: { id }
     });
+
     return prisma;
   }
 }

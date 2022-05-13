@@ -1,6 +1,7 @@
 import IList from "../Interface/list";
 import IListModel from "../Interface/model";
 import IListService from "../Interface/service";
+import IStatusCode from "../Interface/statusCode";
 
 export default class ListServer implements IListService {
   constructor(private listModel: IListModel) {}
@@ -15,8 +16,11 @@ export default class ListServer implements IListService {
     return list;
   }
 
-  public async update(data: IList, id: number): Promise<IList> {
+  public async update(data: IList, id: number): Promise<IList | IStatusCode> {
     const list = await this.listModel.update(data, id);
+    console.log(list);
+    
+    
     return list;
   }
 

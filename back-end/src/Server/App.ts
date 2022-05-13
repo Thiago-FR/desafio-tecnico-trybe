@@ -1,5 +1,6 @@
 import express, { Express, Request, Response, RequestHandler } from 'express';
 const cors = require('cors');
+import 'express-async-errors';
 import IListController from '../Interface/controller';
 import ErrorMiddleware from '../Middleware/ErrorMiddleware';
 import ListRoutes from '../Routes';
