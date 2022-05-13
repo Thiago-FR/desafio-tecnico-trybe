@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client';
 import express, { Express } from 'express';
 import ListController from './src/Controller/ListController';
+import PrismaOrm from './src/helper/PrismaOrm';
 import ListModel from './src/Model/ListModel';
 import App from './src/Server/App';
 import ListServer from './src/Service/ListServer';
@@ -12,7 +12,7 @@ const PORT: number = 3001;
 server.use(cors());
 server.use(express.json());
 
-const prisma = new PrismaClient();
+const prisma = new PrismaOrm();
 
 const listModel = new ListModel(prisma)
 const listService = new ListServer(listModel);
