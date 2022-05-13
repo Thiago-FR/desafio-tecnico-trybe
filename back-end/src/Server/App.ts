@@ -1,4 +1,5 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, RequestHandler } from 'express';
+const cors = require('cors');
 import IListController from '../Interface/controller';
 import ListRoutes from '../Routes';
 
@@ -10,20 +11,29 @@ export default class App {
     private PORT: number,
     private listController: IListController
   ) {
+    this.config();
     this.routes();
   }
 
-  public routes() {
+  private routes() {
     this.app.get('/', (_req: Request, res: Response) => {
       res.status(200).json('OK');
     });
 
-    this.app.use((_req, res, next) => {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      next();
-    });
-
     this.app.use('/api/todo-list', this.listRoutes.router);
+  }
+
+  private config() {
+    const accessControl: RequestHandler = (_req, res, next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,OPTIONS,PUT,PATCH');
+      res.header('Access-Control-Allow-Headers', '*');
+      next();
+    };
+
+    this.app.use(express.json());
+    this.app.use(accessControl);
+    this.app.use(cors());
   }
 
   public start(): void {

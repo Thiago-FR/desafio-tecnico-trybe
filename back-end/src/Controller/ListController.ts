@@ -9,4 +9,11 @@ export default class ListController implements IListController {
     const list = await this.listService.findAll();
     return res.status(200).json(list);
   }
+
+  public async create(req: Request, res: Response): Promise<Response> {
+    const createList = req.body;
+
+    const list = await this.listService.create(createList);
+    return res.status(200).json(list);
+  }
 }

@@ -4,17 +4,13 @@ import PrismaOrm from './src/helper/PrismaOrm';
 import ListModel from './src/Model/ListModel';
 import App from './src/Server/App';
 import ListServer from './src/Service/ListServer';
-const cors = require('cors');
 
 const server: Express = express();
 const PORT: number = 3001;
 
-server.use(cors());
-server.use(express.json());
+const orm = new PrismaOrm();
 
-const prisma = new PrismaOrm();
-
-const listModel = new ListModel(prisma)
+const listModel = new ListModel(orm)
 const listService = new ListServer(listModel);
 const listController = new ListController(listService);
 

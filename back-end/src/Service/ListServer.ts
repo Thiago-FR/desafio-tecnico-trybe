@@ -9,4 +9,9 @@ export default class ListServer implements IListService {
     const list = await this.listModel.findAll();
     return list;
   }
+
+  public async create(data: IList): Promise<IList> {
+    const list = await this.listModel.create(data);
+    return list;
+  }
 }

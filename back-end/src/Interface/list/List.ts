@@ -1,7 +1,7 @@
 export default interface IList {
-  id: Number,
+  id?: number,
   task: string,
-  date: Date,
+  date?: Date,
   status: string,
   responsible: string
 }

@@ -8,5 +8,6 @@ export default class ListRoutes {
 
   private routes() {
     this.router.get('/', (req: Request, res: Response) => this.listController.findAll(req, res));
+    this.router.post('/', (req: Request, res: Response) => this.listController.create(req, res));
   }
 }
