@@ -13,18 +13,18 @@ export default class ListController implements IListController {
   }
 
   public async create(req: Request, res: Response): Promise<Response> {
-    const createList = req.body;
+    const { task, status, responsible } = req.body;
 
-    const list = await this.listService.create(createList);
+    const list = await this.listService.create({ task, status, responsible });
 
     return res.status(201).json(list);
   }
 
   public async update(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
     const { id } = req.params;
-    const createList = req.body;
+    const { task, status, responsible } = req.body;
 
-    const list = await this.listService.update(createList, Number(id));
+    const list = await this.listService.update({ task, status, responsible }, Number(id));
 
     const { statusCode } = list as IStatusCode;
     return typeof (statusCode) !== 'undefined'
