@@ -24,8 +24,10 @@ describe('Create ListTable', () => {
     chai.request(server)
         .post('/api/todo-list')
         .send(createList)
-        .end((err, res) => {
+        .end((_err, res) => {
           expect(res).to.have.status(201);
+          expect(res).to.be.json;
+          expect(res.body).to.be.a('object');
           expect(res.text).to.be.equal(JSON.stringify(listOne));
           done();
     });

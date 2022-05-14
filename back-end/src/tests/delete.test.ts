@@ -3,43 +3,42 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 
 import { server, orm } from '../../index';
-import { updateListOne, updateList, listOne } from './mocks/list';
+import { listOne } from './mocks/list';
 
 chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe('Update ListTable', () => {
-  describe('Update Status 201 ListTable', () => {
+describe('Delete ListTable', () => {
+  describe('Delete Status 200 ListTable', () => {
     before(() => {
       sinon
         .stub(orm, 'findOne')
         .resolves(listOne as any);
       sinon
-        .stub(orm, 'update')
-        .resolves(updateListOne as any);
+        .stub(orm, 'delete')
+        .resolves(listOne as any);
     });
   
     after(()=>{
       (orm.findOne as sinon.SinonStub).restore();
-      (orm.update as sinon.SinonStub).restore();
+      (orm.delete as sinon.SinonStub).restore();
     })
   
     it('Test /api/todo-list/:id', (done) => {
       chai.request(server)
-          .put('/api/todo-list/1')
-          .send(updateList)
+          .delete('/api/todo-list/1')
           .end((_err, res) => {
-            expect(res).to.have.status(201);
+            expect(res).to.have.status(200);
             expect(res).to.be.json;
             expect(res.body).to.be.a('object');
-            expect(res.text).to.be.equal(JSON.stringify(updateListOne));
+            expect(res.text).to.be.equal(JSON.stringify(listOne));
             done();
       });
     });
   });
 
-  describe('Update Status 404 ListTable', () => {
+  describe('Delete Status 404 ListTable', () => {
     before(() => {
       sinon
         .stub(orm, 'findOne')
@@ -52,8 +51,7 @@ describe('Update ListTable', () => {
   
     it('Test /api/todo-list/:id', (done) => {
       chai.request(server)
-          .put('/api/todo-list/2')
-          .send(updateList)
+          .delete('/api/todo-list/2')
           .end((_err, res) => {
             expect(res).to.have.status(404);
             expect(res).to.be.json;

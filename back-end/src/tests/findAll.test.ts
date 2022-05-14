@@ -23,8 +23,9 @@ describe('findAll ListTable', () => {
   it('Test /api/todo-list', (done) => {
     chai.request(server)
         .get('/api/todo-list')
-        .end((err, res) => {
+        .end((_err, res) => {
           expect(res).to.have.status(200);
+          expect(res).to.be.json;
           expect(res.text).to.be.equal(JSON.stringify(listAll));
           done();
     });
