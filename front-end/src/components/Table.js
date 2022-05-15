@@ -1,12 +1,19 @@
 import React, { useContext, useState } from "react";
 import ToDoListContext from "../context/ToDoListContext";
+import { fetchUpdate, fetchFindAll } from "../services/fetchApi";
 import imgRemove from '../img/lixeira.png'
 import editarRemove from '../img/editar.png'
 import salveItem from '../img/disket.png'
 
 function Table() {
-  const { isEditItem: { edited, indexOf }, setIsEditItem, data } = useContext(ToDoListContext);
+  const {
+    isEditItem: { edited, indexOf },
+    setIsEditItem,
+    data,
+    setData
+  } = useContext(ToDoListContext);
 
+  const [id, setId] = useState('');
   const [task, setTask] = useState('');
   const [responsible, setResponsible] = useState('');
   const [date, setDate] = useState('');
@@ -14,14 +21,17 @@ function Table() {
 
   function editItem({ id, task, responsible, date, status }) {
     setIsEditItem({ edited: true, indexOf: id });
+    setId(id);
     setTask(task);
     setResponsible(responsible);
     setDate(date.substr(0, 10));
     setStatus(status);
   }
 
-  function saveItem() {
+  async function saveItem() {
     setIsEditItem({ edited: false, indexOf: 0 });
+    await fetchUpdate({ task, responsible, status }, id);
+    await fetchFindAll(setData);
     setTask('');
     setResponsible('');
     setDate('');

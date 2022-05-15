@@ -46,3 +46,11 @@ export async function fetchCreate(data) {
     body: JSON.stringify(data),
   });
 };
+
+export async function fetchUpdate(data, id) {
+  await fetch(`${URL}/${id}`, {
+    method: 'PUT',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+};
