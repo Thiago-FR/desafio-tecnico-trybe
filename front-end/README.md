@@ -4,8 +4,8 @@ Pagina de Login ------------------- Requisito Fora do Desafio
 - Guardar dados do login no useState
 
 Tabela da lista de Tarefas
-- Inserir Tarefa ok
-- Remover Tarefa
+- Inserir Tarefa - ok
+- Remover Tarefa - ok
 - Atualizar Tarefa - ok
 - Status da Tarefa - ok
   - Pendente
