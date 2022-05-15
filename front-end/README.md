@@ -6,8 +6,8 @@ Pagina de Login ------------------- Requisito Fora do Desafio
 Tabela da lista de Tarefas
 - Inserir Tarefa ok
 - Remover Tarefa
-- Atualizar Tarefa - Proximo passo
-- Status da Tarefa
+- Atualizar Tarefa - ok
+- Status da Tarefa - ok
   - Pendente
   - em Andamento
   - Pronto
@@ -16,4 +16,6 @@ Tabela da lista de Tarefas
   - Data de criação
   - Status
 
-Conexão com API do back end
+Conexão com API do back end - ok
+
+Montar Documentação README

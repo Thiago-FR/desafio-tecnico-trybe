@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import ToDoListContext from "../context/ToDoListContext";
-import { fetchUpdate, fetchFindAll } from "../services/fetchApi";
+import { fetchUpdate, fetchFindAll, fetchRemove } from "../services/fetchApi";
 import imgRemove from '../img/lixeira.png'
 import editarRemove from '../img/editar.png'
 import salveItem from '../img/disket.png'
@@ -38,6 +38,11 @@ function Table() {
     setStatus('');
   }
 
+  async function removeItem(id) {
+    await fetchRemove(id);
+    await fetchFindAll(setData);
+  }
+
   return (
     <table className="table table-striped mt-4 align-middle">
       <thead>
@@ -71,6 +76,7 @@ function Table() {
                       className="btn btn-outline-danger"
                       style={{ marginLeft: "10px" }}
                       type="button"
+                      onClick={ () => removeItem(row.id)}
                     >
                       <img style={{ width: "30px", height: "30px" }} src={ imgRemove } alt="Remover item"/>
                     </button>
@@ -86,14 +92,7 @@ function Table() {
                       onChange={ ({ target: { value } }) => setTask(value) }
                     />
                   </td>
-                  <td>
-                    <input
-                      className="form-control"
-                      value={ date }
-                      type="date"
-                      onChange={ ({ target: { value } }) => setDate(value) }
-                    />
-                  </td>
+                  <td>{ row.date.substr(0, 10) }</td>
                   <td>
                     <select
                       className="form-select"
@@ -124,6 +123,7 @@ function Table() {
                       className="btn btn-outline-danger"
                       style={{ marginLeft: "10px" }}
                       type="button"
+                      onClick={ () => removeItem(row.id)}
                     >
                       <img style={{ width: "30px", height: "30px" }} src={ imgRemove } alt="Remover item"/>
                     </button>

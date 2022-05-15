@@ -54,3 +54,11 @@ export async function fetchUpdate(data, id) {
     body: JSON.stringify(data),
   });
 };
+
+export async function fetchRemove(id) {
+  console.log(id);
+  await fetch(`${URL}/${id}`, {
+    method: 'DELETE',
+    headers: { "Content-Type": "application/json" },
+  });
+};
