@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ToDoListContext from './ToDoListContext';
-import { fetchApiMock } from "../services/fetchApi";
+import { fetchFindAll } from "../services/fetchApi";
 
 function ToDoListProvider({ children }) {
   const [data, setData] = useState([]);
   const [isEditItem, setIsEditItem] = useState({ edited: false, indexOf: 0 });
 
   useEffect(() => {
-    fetchApiMock(setData);
+    fetchFindAll(setData);
   }, []);
 
   const context = {

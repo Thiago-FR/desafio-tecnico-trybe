@@ -1,17 +1,15 @@
 import React, { useState, useContext } from "react";
 import ToDoListContext from '../context/ToDoListContext';
-import { fetchApiMock, fetchApiMockAdd } from "../services/fetchApi";
+import { fetchFindAll, fetchCreate } from "../services/fetchApi";
 
 function InsertBar() {
   const { setData, isEditItem } = useContext(ToDoListContext);
   const [task, setTask] = useState('');
   const [responsible, setResponsible] = useState('');
 
-  function addList() {
-    // await fetchCreate({ task, responsible });
-    // await fetchFindAll(setData);
-    fetchApiMockAdd({ task, responsible });
-    fetchApiMock(setData);
+  async function addList() {
+    await fetchCreate({ task, responsible, status: 'Pendente' });
+    await fetchFindAll(setData);
     setTask('');
     setResponsible('');
   }

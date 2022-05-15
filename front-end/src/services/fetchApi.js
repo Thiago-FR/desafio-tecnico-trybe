@@ -29,11 +29,20 @@ export function fetchApiMockAdd({ task, responsible }) {
   mockData.push(newData);
 }
 
+const URL = 'http://localhost:3001/api/todo-list';
+
 export async function fetchFindAll(setData) {
-  await fetch('')
+  await fetch(`${URL}`)
     .then((data) => data.json())
     .then((data) => {
-      console.log(data);
       setData([...data])
     });
+};
+
+export async function fetchCreate(data) {
+  await fetch(`${URL}`, {
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
 };

@@ -16,7 +16,7 @@ function Table() {
     setIsEditItem({ edited: true, indexOf: id });
     setTask(task);
     setResponsible(responsible);
-    setDate(date);
+    setDate(date.substr(0, 10));
     setStatus(status);
   }
 
@@ -46,7 +46,7 @@ function Table() {
                 <tr key={ `${row.id}-${row.task}` }>
                   <th scope="row">{ row.id }</th>
                   <td>{ row.task }</td>
-                  <td>{ row.date }</td>
+                  <td>{ row.date.substr(0, 10) }</td>
                   <td>{ row.status }</td>
                   <td>{ row.responsible }</td>
                   <td>
