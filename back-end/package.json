@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "ts-node index.ts",
+    "build": "npx tsc",
+    "db:reset": "npx prisma migrate dev --name create-table",
+    "prestart": "npm run build && npm run db:reset",
+    "start": "node ./dist/",
     "dev": "ts-node-dev index.ts",
     "coverage": "nyc npm run test",
-    "test": "mocha -r ts-node/register ./src/tests/*$NAME*.{test,spec}.ts -t 30000 --exit"
+    "test": "mocha -r ts-node/register ./src/tests/*$NAME*.{test,spec}.ts -t 30000 --exit",
+    "docker:up": "docker-compose up -d --build",
+    "docker:down": "docker-compose down --remove-orphans"
   },
   "keywords": [
     "typescript",

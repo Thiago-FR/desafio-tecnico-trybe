@@ -1,4 +1,6 @@
+/build
 /node_modules
 /prisma/migrations
+.env.example
+
 /.nyc_output
-.env
