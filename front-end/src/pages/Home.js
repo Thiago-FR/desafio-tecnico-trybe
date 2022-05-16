@@ -7,6 +7,7 @@ import InsertBar from "../components/InsertBar";
 function Home() {
   return (
     <div className="container">
+      
       <Header h1="TAREFAS"/>
       <main>
         <InsertBar />

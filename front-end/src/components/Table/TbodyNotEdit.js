@@ -6,7 +6,7 @@ import editarRemove from '../../img/editar.png'
 function TbodyNotEdit({ row, contextTable }) {
   const { setIsEditItem } = useContext(ToDoListContext);
 
-  const { setId, setTask, setResponsible, setStatus, removeItem } = contextTable;
+  const { setId, setTask, setResponsible, setStatus, handleDelete } = contextTable;
 
   function editItem({ id, task, responsible, status }) {
     setIsEditItem({ edited: true, indexOf: id });
@@ -35,7 +35,7 @@ function TbodyNotEdit({ row, contextTable }) {
           className="btn btn-outline-danger"
           style={{ marginLeft: "10px" }}
           type="button"
-          onClick={ () => removeItem(row.id)}
+          onClick={ () => handleDelete(row.id)}
         >
           <img style={{ width: "30px", height: "30px" }} src={ imgRemove } alt="Remover item"/>
         </button>

@@ -4,6 +4,7 @@ import { fetchFindAll, fetchRemove } from "../services/fetchApi";
 import Thead from './Table/Thead';
 import TbodyNotEdit from './Table/TbodyNotEdit';
 import TbodyIsEdit from './Table/TbodyIsEdit';
+import ModalDelete from "../components/ModalDelete";
 
 function Table() {
   const {
@@ -17,9 +18,19 @@ function Table() {
   const [responsible, setResponsible] = useState('');
   const [status, setStatus] = useState('');
 
-  async function removeItem(id) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
+  async function removeItem() {
     await fetchRemove(id);
     await fetchFindAll(setData);
+    setShow(false);
+    setId('');
+  }
+
+  function handleDelete(id) {
+    setShow(true);
+    setId(id);
   }
 
   const contextTable = {
@@ -31,29 +42,32 @@ function Table() {
     setResponsible,
     status,
     setStatus,
-    removeItem,
-  }
+    handleDelete,
+  }  
 
   return (
-    <table className="table table-striped mt-4 align-middle">
-      <Thead />
-      <tbody>
-          { data.length !== 0 && (
-              data.map((row) => !edited || indexOf !== row.id
-              ?
-                <TbodyNotEdit
-                  key={ `${row.id}-${row.task}` }
-                  row= { row } contextTable={ contextTable }
-                />              
-              : 
-                <TbodyIsEdit
-                  key={ `${row.id}-${row.task}-edit` }
-                  row= { row } contextTable={ contextTable }
-                /> 
-              )
-          )}
-      </tbody>
-    </table>
+    <>
+      <ModalDelete show={ show } handleClose={ handleClose } handleDelete={ removeItem }/>
+      <table className="table table-striped mt-4 align-middle">
+        <Thead />
+        <tbody>
+            { data.length !== 0 && (
+                data.map((row) => !edited || indexOf !== row.id
+                ?
+                  <TbodyNotEdit
+                    key={ `${row.id}-${row.task}` }
+                    row= { row } contextTable={ contextTable }
+                  />              
+                : 
+                  <TbodyIsEdit
+                    key={ `${row.id}-${row.task}-edit` }
+                    row= { row } contextTable={ contextTable }
+                  /> 
+                )
+            )}
+        </tbody>
+      </table>
+    </>
   );
 }
 
