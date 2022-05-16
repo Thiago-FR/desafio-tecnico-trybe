@@ -11,8 +11,8 @@ services:
       db:
         condition: service_healthy
     environment:
-      - PORT=3001
-      - DATABASE_URL="mysql://root:123456@db:3306/todo-list"
+        PORT: 3001
+        DATABASE_URL: "mysql://root:123456@db:3306/todo-list"
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3001"] # Caso utilize outra porta interna para o back, altere ela aqui também
       timeout: 10s

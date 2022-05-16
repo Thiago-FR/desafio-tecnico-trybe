@@ -2,3 +2,4 @@
 /prisma/migrations
 /.nyc_output
 .env
+/dist
