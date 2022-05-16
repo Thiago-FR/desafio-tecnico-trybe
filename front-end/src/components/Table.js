@@ -28,9 +28,9 @@ function Table() {
     setId('');
   }
 
-  function handleDelete(id) {
+  function handleDelete(idDelete) {
     setShow(true);
-    setId(id);
+    setId(idDelete);
   }
 
   const contextTable = {
