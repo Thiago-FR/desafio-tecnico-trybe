@@ -15,12 +15,24 @@ function Thead() {
   return (
     <thead>
       <tr>
-        <th scope="col" onClick={ () => setFilterByTask('id') }>#</th>
-        <th scope="col" onClick={ () => setFilterByTask('task') }>Tarefa</th>
-        <th scope="col" onClick={ () => setFilterByTask('date') }>Data</th>
-        <th scope="col" onClick={ () => setFilterByTask('status') }>Status</th>
-        <th scope="col" onClick={ () => setFilterByTask('responsible') }>Responsável</th>
-        <th scope="col">Editar</th>
+        <th scope="col" onClick={ () => setFilterByTask('id') }>
+          <span className="cursor">#</span>
+        </th>
+        <th scope="col" onClick={ () => setFilterByTask('task') }>
+          <span className="cursor">Tarefa</span>
+        </th>
+        <th scope="col" onClick={ () => setFilterByTask('date') }>
+          <span className="cursor">Data</span>
+        </th>
+        <th scope="col" onClick={ () => setFilterByTask('status') }>
+          <span className="cursor">Status</span>
+        </th>
+        <th scope="col" onClick={ () => setFilterByTask('responsible') }>
+          <span className="cursor">Responsável</span>
+        </th>
+        <th scope="col">
+          Editar
+        </th>
       </tr>
     </thead>
   );

@@ -11,7 +11,7 @@ Tabela da lista de Tarefas
   - Pendente
   - em Andamento
   - Pronto
-- Deve Ser ordenavel
+- Deve Ser ordenavel - ok
   - Ordem Alfabetica
   - Data de criação
   - Status
