@@ -20,7 +20,9 @@
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js, .jsx"
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js, .jsx",
+    "docker:up": "docker-compose up -d --build",
+    "docker:down": "docker-compose down --remove-orphans"
   },
   "eslintConfig": {
     "extends": [

@@ -5,16 +5,23 @@ import { fetchFindAll } from "../services/fetchApi";
 function ToDoListProvider({ children }) {
   const [data, setData] = useState([]);
   const [isEditItem, setIsEditItem] = useState({ edited: false, indexOf: 0 });
+  const [filter, setFilter] = useState([]);
 
   useEffect(() => {
     fetchFindAll(setData);
   }, []);
 
+  useEffect(() => {
+    setData([...filter]);
+  }, [filter]);
+
   const context = {
     data,
     setData,
     isEditItem,
-    setIsEditItem
+    setIsEditItem,
+    filter,
+    setFilter,
   }
 
   return(
