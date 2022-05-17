@@ -11,12 +11,13 @@ export default class ValidadeCreateTask {
         'any.required': `400|${allFields}`,
         'string.empty': `400|Campo Tarefa necessário!`,
       }),
-      responsible: Joi.string().min(6).required().messages({
+      responsible: Joi.string().required().messages({
         'any.required': `400|${allFields}`,
         'string.empty': `400|Campo Responsável necessário!`,
       }),
     }).validate({ task, responsible });
-
+    console.log(error);
+    
     if (error) return next(error);
 
     return next();
