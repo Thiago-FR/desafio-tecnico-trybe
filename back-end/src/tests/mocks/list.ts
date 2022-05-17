@@ -4,6 +4,28 @@ export const createList = {
   "responsible": "testando"
 }
 
+export const createListBadRequest_1 = {
+  "task": "",
+  "status": "Pendente",
+  "responsible": "testando"
+}
+
+export const createListBadRequest_2 = {
+  "task": "test",
+  "status": "Pendente",
+  "responsible": ""
+}
+
+export const createListBadRequest_3 = {
+  "status": "Pendente",
+  "responsible": ""
+}
+
+export const createListBadRequest_4 = {
+  "task": "test",
+  "status": "Pendente",
+}
+
 export const updateList = {
   "task": "test",
   "status": "Pronto",

@@ -9,11 +9,11 @@ export default class ValidadeCreateTask {
     const { error } = Joi.object({
       task: Joi.string().required().messages({
         'any.required': `400|${allFields}`,
-        'string.empty': `400|Campo Tarefa necessário`,
+        'string.empty': `400|Campo Tarefa necessário!`,
       }),
       responsible: Joi.string().min(6).required().messages({
         'any.required': `400|${allFields}`,
-        'string.empty': `400|Campo Responsável necessário`,
+        'string.empty': `400|Campo Responsável necessário!`,
       }),
     }).validate({ task, responsible });
 

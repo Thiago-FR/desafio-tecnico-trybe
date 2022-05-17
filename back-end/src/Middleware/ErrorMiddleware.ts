@@ -10,9 +10,9 @@ export default class ErrorMiddleware {
     if (err.isJoi) {
       const [code, message] = err.details[0].message.split('|');
 
-      return res.status(code).json({ message });
+      return res.status(Number(code)).json({ message });
     }
-    
+
     if (err.statusCode) {{
       const { code, message } = err.statusCode;
 
