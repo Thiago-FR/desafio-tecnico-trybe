@@ -37,7 +37,7 @@ function TbodyIsEdit({ row, contextTable }) {
           onChange={ ({ target: { value } }) => setTask(value) }
         />
       </td>
-      <td>{ row.date.substr(0, 10) }</td>
+      <td>{ row.date.substr(0, 10).split('-').reverse().join('/') }</td>
       <td>
         <select
           className="form-select"

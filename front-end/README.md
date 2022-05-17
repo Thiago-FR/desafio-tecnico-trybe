@@ -44,7 +44,7 @@
 2. Acesse a branch front-end
   * `git checkout front-end`
 
-### Rodar API por docker <a name="via-docker"></a>
+### Rodar por docker <a name="via-docker"></a>
 
 1. API via Docker [**É Necessário ter o docker-compose v1.29 instalado!**]
   * Entre na pasta */front-end*
@@ -56,15 +56,15 @@
 3. Para descer os container basta rodar:
   * `npm run docker:down`
 
-### Rodar API Local <a name="via-local"></a>
+### Rodar Localmente <a name="via-local"></a>
 
-1. Rode a API local [ **É Necessário ter o MySql instalado!** ]
+1. Rode localmente
   * Entre na pasta */front-end*
 
 2. Instale as dependências
   * `npm install`
 
-3. Inicie a API.
+3. Inicie o projeto.
   * `npm start`
 
 Obs: Para um melhor aproveitamento é recomendado subir o back-end para ter a experiência completa!

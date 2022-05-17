@@ -20,7 +20,7 @@ function TbodyNotEdit({ row, contextTable }) {
     <tr key={ `${row.id}-${row.task}` }>
       <th scope="row">{ row.id }</th>
       <td>{ row.task }</td>
-      <td>{ row.date.substr(0, 10) }</td>
+      <td>{ row.date.substr(0, 10).split('-').reverse().join('/') }</td>
       <td>{ row.status }</td>
       <td>{ row.responsible }</td>
       <td>
