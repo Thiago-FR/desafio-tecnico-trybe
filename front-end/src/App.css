@@ -1,0 +1,13 @@
+/* Referência para centralização  https://gist.github.com/ricardobarantini/5584886*/
+.centered {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.rigth {
+  text-align: right
+}
+
+.cursor {
+  cursor: pointer;
+}
