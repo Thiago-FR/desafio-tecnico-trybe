@@ -31,7 +31,7 @@
 
 ---
 
-## Para testar o projeto Dcoker: <a name="testar-o-projeto"></a>
+## Para testar o projeto Docker: <a name="testar-o-projeto"></a>
 
 1. Clone o repositório
   * `https://github.com/Thiago-FR/desafio-tecnico-trybe.git`.
