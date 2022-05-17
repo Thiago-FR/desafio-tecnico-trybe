@@ -9,7 +9,6 @@
 
 - [Boas vindas ao repositório ToDo-List - Front-End](#boas-vindas-ao-repositório-todo-list)
 - [O que foi desenvolvido](#o-que-foi-desenvolvido)
-  - [Conexão local](#conexao-local)
 - [Para testar o projeto](#testar-o-projeto)
   - [Rodar API por docker](#via-docker)
   - [Rodar API Local](#via-local)
