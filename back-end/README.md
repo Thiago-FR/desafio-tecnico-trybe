@@ -7,32 +7,22 @@
 
 # Sumário
 
-- [Boas vindas ao repositório ToDo-List - FullStack](#boas-vindas-ao-repositório-todo-list)
+- [Boas vindas ao repositório ToDo-List - Back-End](#boas-vindas-ao-repositório-todo-list)
 - [O que foi desenvolvido](#o-que-foi-desenvolvido)
 - [Conexão com o Banco](#conexao-db)
   - [Conexão local](#conexao-local)
 - [Para testar o projeto](#testar-o-projeto)
   - [Rodar API por docker](#via-docker)
   - [Rodar API Local](#via-local)
+- [Testes desenvolvidos](#tdd)
+  - [Testes](#tdd-1)
+  - [Cobertura de Código](#coverage)
 - [Endpoint's](#endpoint)
   - [Para criar Tarefa POST](#task-post)
   - [Para buscar Tarefas GET](#task-get)
   - [Para atualizar Tarefa por ID PUT](#task-put)
   - [Para deletar Tarefa por ID DELETE](#task-delte)
 - [Protótipo](#prototipo)
-
----
-
-## Habilidades desenvolvidas: <a name="habilidades"></a>
-
- - Realizar a dockerização dos apps, network, volume e compose;
- - Modelar dados com **MySQL** através do **Sequelize**;
- - Criar e associar tabelas usando `models` do `sequelize`;
- - Construir uma **API REST** com endpoints para consumir os models criados;
- - Fazer um `CRUD` utilizando `ORM`;
- - Proteção de senha com biblioteca `bcryptjs`
- - Gerar token `JWT
- - Realizar TDD
 
 ---
 
@@ -78,7 +68,7 @@ DATABASE_URL="mysql://user:password@host:port/db"
 ### Rodar API por docker <a name="via-docker"></a>
 
 1. API via Docker [**É Necessário ter o docker-compose v1.29 instalado!**]
-  * Entre na pasta */backend*
+  * Entre na pasta */back-end*
   * `npm run docker:up`
 
 2. Ao final da containerização você pode checar os container **db** e **app_backend** :
@@ -90,7 +80,7 @@ DATABASE_URL="mysql://user:password@host:port/db"
 ### Rodar API Local <a name="via-local"></a>
 
 1. Rode a API local [ **É Necessário ter o MySql instalado!** ]
-  * Entre na pasta */backend*
+  * Entre na pasta */back-end*
 
 2 Instale as dependências
   * `npm install`
@@ -99,6 +89,20 @@ DATABASE_URL="mysql://user:password@host:port/db"
   * `npm start`
 
 Obs: Este projeto utiliza variável de ambiente veja a sessação - [Conexão com o Banco](#conexao-db)
+
+---
+
+## Testes desenvolvidos: <a name="tdd"></a>
+
+### Testes <a name="tdd-1"></a>
+
+1. Após instalar as dependências rode o comando:
+  * `npm test`
+
+### Cobertura de Código <a name="coverage"></a>
+
+1. Após instalar as dependências rode o comando:
+  * `npm run coverage`
 
 ---
 
