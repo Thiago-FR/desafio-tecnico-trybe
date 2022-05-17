@@ -82,10 +82,10 @@ DATABASE_URL="mysql://user:password@host:port/db"
 1. Rode a API local [ **É Necessário ter o MySql instalado!** ]
   * Entre na pasta */back-end*
 
-2 Instale as dependências
+2. Instale as dependências
   * `npm install`
 
-3 Inicie a API.
+3. Inicie a API.
   * `npm start`
 
 Obs: Este projeto utiliza variável de ambiente veja a sessação - [Conexão com o Banco](#conexao-db)
