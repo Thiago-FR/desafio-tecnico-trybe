@@ -9,16 +9,13 @@
 
 - [Boas vindas ao repositório ToDo-List - Front-End](#boas-vindas-ao-repositório-todo-list)
 - [O que foi desenvolvido](#o-que-foi-desenvolvido)
-- [Conexão com o Banco](#conexao-db)
   - [Conexão local](#conexao-local)
 - [Para testar o projeto](#testar-o-projeto)
   - [Rodar API por docker](#via-docker)
   - [Rodar API Local](#via-local)
-- [Endpoint's](#endpoint)
-  - [Para criar Tarefa POST](#task-post)
-  - [Para buscar Tarefas GET](#task-get)
-  - [Para atualizar Tarefa por ID PUT](#task-put)
-  - [Para deletar Tarefa por ID DELETE](#task-delte)
+- [Testes desenvolvidos](#tdd)
+  - [Testes](#tdd-1)
+  - [Cobertura de Código](#coverage)
 - [Protótipo](#prototipo)
 
 ---
@@ -90,4 +87,5 @@ Obs: Para um melhor aproveitamento é recomendado subir o back-end para ter a ex
 
 ## Protótipo <a name="prototipo"></a>
 ![Prototipo]()
+
 ---
