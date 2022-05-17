@@ -81,24 +81,24 @@ DATABASE_URL="mysql://user:password@host:port/db"
   * Entre na pasta */backend*
   * `npm run docker:up`
 
-  1.1. Ao final da containerização você pode checar os container **db** e **app_backend** :
-    * `docker ps`
+2. Ao final da containerização você pode checar os container **db** e **app_backend** :
+  * `docker ps`
 
-  1.2. Para descer os container basta rodar:
-    * `npm run docker:down`
+3. Para descer os container basta rodar:
+  * `npm run docker:down`
 
 ### Rodar API Local <a name="via-local"></a>
 
-2. Rode a API local [**É Necessário ter o MySql instalado!**]
+1. Rode a API local [ **É Necessário ter o MySql instalado!** ]
   * Entre na pasta */backend*
 
-  2.1 Instale as dependências
-    * `npm install`
+2 Instale as dependências
+  * `npm install`
 
-  2.2 Inicie a API.
-    * `npm start`
+3 Inicie a API.
+  * `npm start`
 
-    Obs: Este projeto utiliza variável de ambiente veja a sessação [Conexão com o Banco](#conexao-db)
+Obs: Este projeto utiliza variável de ambiente veja a sessação - [Conexão com o Banco](#conexao-db)
 
 ---
 
