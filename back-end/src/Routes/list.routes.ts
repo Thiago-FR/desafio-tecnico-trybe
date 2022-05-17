@@ -19,6 +19,7 @@ export default class ListRoutes {
     );
     this.router.put(
       '/:id',
+      ValidadeCreateTask.joi,
       (req: Request, res: Response, next: NextFunction) => this.listController.update(req, res, next)
     );
     this.router.delete(
