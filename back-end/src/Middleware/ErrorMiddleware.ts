@@ -7,6 +7,12 @@ export default class ErrorMiddleware {
     res: Response,
     _next: NextFunction
   ): Response {
+    if (err.isJoi) {
+      const [code, message] = err.details[0].message.split('|');
+
+      return res.status(code).json({ message });
+    }
+    
     if (err.statusCode) {{
       const { code, message } = err.statusCode;
 

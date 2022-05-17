@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response, Router } from "express";
 import IListController from "../Interface/controller";
+import ValidadeCreateTask from "../Schema/ValidadeCreateTask";
 
 export default class ListRoutes {
   constructor(private listController: IListController, public router: Router) {
@@ -13,6 +14,7 @@ export default class ListRoutes {
     );
     this.router.post(
       '/',
+      ValidadeCreateTask.joi,
       (req: Request, res: Response) => this.listController.create(req, res)
     );
     this.router.put(
