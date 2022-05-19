@@ -13,7 +13,7 @@ function Home() {
         <InsertBar />
         <Table />
       </main>
-      <Footer name="Ebytr 2022"/>
+      <Footer name="2022 Ebytr"/>
     </div>
   );
 }
