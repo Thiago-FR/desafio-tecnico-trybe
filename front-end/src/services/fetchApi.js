@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3001/api/todo-list';
+const URL = `${process.env.REACT_APP_HOST}/api/todo-list`;
 
 export async function fetchFindAll(setData) {
   await fetch(`${URL}`)

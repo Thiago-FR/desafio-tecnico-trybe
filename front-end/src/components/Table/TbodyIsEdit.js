@@ -15,7 +15,7 @@ function TbodyIsEdit({ row, contextTable }) {
     setResponsible,
     status,
     setStatus,
-    removeItem,
+    handleDelete,
   } = contextTable;
 
   async function saveItem() {
@@ -68,7 +68,7 @@ function TbodyIsEdit({ row, contextTable }) {
           className="btn btn-outline-danger"
           style={{ marginLeft: "10px" }}
           type="button"
-          onClick={ () => removeItem(row.id)}
+          onClick={ () => handleDelete(row.id)}
         >
           <img style={{ width: "30px", height: "30px" }} src={ imgRemove } alt="Remover item"/>
         </button>
