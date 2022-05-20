@@ -13,7 +13,7 @@
 - [Back-End](#back-end)
   - [O que foi desenvolvido](#o-que-foi-desenvolvido-back)
   - [Conexão com o Banco](#conexao-db)
-    - [Conexão local](#conexao-local)
+    - [Conexão local](#conexao-local-back)
   - [Para testar o projeto](#testar-o-projeto-back)
   - [Testes desenvolvidos](#tdd-back)
     - [Testes](#tdd-1-back)
@@ -26,6 +26,7 @@
 - [Front-End](#front-end)
   - [O que foi desenvolvido](#o-que-foi-desenvolvido-front)
   - [Para testar o projeto](#testar-o-projeto-front)
+    - [Conexão local](#conexao-local-front)
   - [Testes desenvolvidos](#tdd-front)
     - [Testes](#tdd-1-front)
     - [Cobertura de Código](#coverage-front)
@@ -79,7 +80,7 @@ Acessar o link: [deploy-heroku](https://frontend-todo-list-2022.herokuapp.com/)
 
 ### Conexão com o Banco: <a name="conexao-db"></a>
 
-#### Conexão local <a name="conexao-local"></a>
+#### Conexão local <a name="conexao-local-back"></a>
 
 **⚠️ IMPORTANTE! ⚠️**
 
@@ -210,6 +211,20 @@ Body
 ---
 
 ## Para testar o projeto: <a name="testar-o-projeto-front"></a>
+
+---
+
+#### Conexão local <a name="conexao-local-front"></a>
+
+**⚠️ IMPORTANTE! ⚠️**
+
+Essa aplicação as seguintes variáveis de ambiente para conexão com o back-end:
+
+```sh
+REACT_APP_HOST="http://localhost:3001"
+```
+
+---
 
 1. Clone o repositório
   * `https://github.com/Thiago-FR/desafio-tecnico-trybe.git`.
