@@ -11,6 +11,7 @@ function Table() {
     isEditItem: { edited, indexOf },
     data,
     setData,
+    setIsEditItem,
   } = useContext(ToDoListContext);
 
   const [id, setId] = useState('');
@@ -24,6 +25,7 @@ function Table() {
   async function removeItem() {
     await fetchRemove(id);
     await fetchFindAll(setData);
+    setIsEditItem({ edited: false, indexOf: 0 });
     setShow(false);
     setId('');
   }

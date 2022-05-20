@@ -19,9 +19,9 @@ function TbodyIsEdit({ row, contextTable }) {
   } = contextTable;
 
   async function saveItem() {
-    setIsEditItem({ edited: false, indexOf: 0 });
     await fetchUpdate({ task, responsible, status }, id);
     await fetchFindAll(setData);
+    setIsEditItem({ edited: false, indexOf: 0 });
     setTask('');
     setResponsible('');
     setStatus('');
