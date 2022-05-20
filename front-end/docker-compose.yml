@@ -6,6 +6,8 @@ services:
       # depends_on:
       #   backend:
       #     condition: service_healthy
+      environment:
+          REACT_APP_HOST: "http://localhost:3001"
       ports:
         - 3000:3000
       restart: 'always'

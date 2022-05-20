@@ -10,6 +10,7 @@
 - [Boas vindas ao repositório ToDo-List - Front-End](#boas-vindas-ao-repositório-todo-list)
 - [O que foi desenvolvido](#o-que-foi-desenvolvido)
 - [Para testar o projeto](#testar-o-projeto)
+  - [Conexão local](#conexao-local-front)
   - [Rodar API por docker](#via-docker)
   - [Rodar API Local](#via-local)
 - [Testes desenvolvidos](#tdd)
@@ -31,10 +32,23 @@
    - Atualizar Tarefas
    - Ordenar Tarefas por: Ordem alfabetica, data de criação e status
 
-
 ---
 
 ## Para testar o projeto: <a name="testar-o-projeto"></a>
+
+---
+
+#### Conexão local <a name="conexao-local-front"></a>
+
+**⚠️ IMPORTANTE! ⚠️**
+
+Essa aplicação as seguintes variáveis de ambiente para conexão com o back-end:
+
+```sh
+REACT_APP_HOST="http://localhost:3001"
+```
+
+---
 
 1. Clone o repositório
   * `https://github.com/Thiago-FR/desafio-tecnico-trybe.git`.
