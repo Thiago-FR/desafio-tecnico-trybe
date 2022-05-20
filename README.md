@@ -8,6 +8,8 @@
 # Sumário
 
 - [Boas vindas ao repositório ToDo-List - FullStack](#boas-vindas-ao-repositório-todo-list)
+- [Para testar o projeto com Deploy](#deploy)
+- [Para testar o projeto com Docker](#testar-o-projeto)
 - [Back-End](#back-end)
   - [O que foi desenvolvido](#o-que-foi-desenvolvido-back)
   - [Conexão com o Banco](#conexao-db)
@@ -20,14 +22,25 @@
     - [Para criar Tarefa POST](#task-post)
     - [Para buscar Tarefas GET](#task-get)
     - [Para atualizar Tarefa por ID PUT](#task-put)
-    - [Para deletar Tarefa por ID DELETE](#task-delte)
+    - [Para deletar Tarefa por ID DELETE](#task-delete)
 - [Front-End](#front-end)
-  - [O que foi desenvolvido](#o-que-foi-desenvolvido-back)
-  - [Para testar o projeto](#testar-o-projeto-back)
-  - [Testes desenvolvidos](#tdd-back)
-    - [Testes](#tdd-1-back)
-    - [Cobertura de Código](#coverage-back)
+  - [O que foi desenvolvido](#o-que-foi-desenvolvido-front)
+  - [Para testar o projeto](#testar-o-projeto-front)
+  - [Testes desenvolvidos](#tdd-front)
+    - [Testes](#tdd-1-front)
+    - [Cobertura de Código](#coverage-front)
 - [Protótipo](#prototipo)
+
+---
+
+## Para testar o projeto com Deploy: <a name="deploy"></a>
+
+Para testar:
+
+Acessar o link: [deploy-heroku](https://frontend-todo-list-2022.herokuapp.com/)
+
+**⚠️ IMPORTANTE! ⚠️**
+* Por se tratar de uma conta gratuida do heroku, é possível que o link esteja **offline**
 
 ---
 
