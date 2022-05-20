@@ -6,14 +6,13 @@ import InsertBar from "../components/InsertBar";
 
 function Home() {
   return (
-    <div className="container">
-      
+    <div className="container">      
       <Header h1="TAREFAS"/>
       <main>
         <InsertBar />
         <Table />
       </main>
-      <Footer name="2022 Ebytr"/>
+      <Footer name={`${new Date().getFullYear()} Ebytr`}/>
     </div>
   );
 }
