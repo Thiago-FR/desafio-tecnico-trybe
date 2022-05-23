@@ -3,7 +3,8 @@ import IList from "../Interface/list";
 import IOrm from "../Interface/prisma";
 
 export default class PrismaOrm implements IOrm {
-  public prismaOrm = new PrismaClient();
+  // public prismaOrm = new PrismaClient();
+  constructor(private prismaOrm: PrismaClient) {}
 
   public async findOne(id: number): Promise<IList | null> {
     const prisma = await this.prismaOrm.table.findFirst({ 
