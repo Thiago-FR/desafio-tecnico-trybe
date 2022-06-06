@@ -41,7 +41,7 @@ Para testar:
 Acessar o link: [deploy-heroku](https://frontend-todo-list-2022.herokuapp.com/)
 
 **⚠️ IMPORTANTE! ⚠️**
-* Por se tratar de uma conta gratuida do heroku, é possível que o link esteja **offline**
+* Por se tratar de uma conta gratuita do heroku, é possível que o link esteja **offline**
 
 ---
 
